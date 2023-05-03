@@ -9,11 +9,11 @@ global main
 		b: resd 1
 	segment .text
 	add:
-		push ebp
-		mov ebp, esp ; ebp become the top
-		mov ebx, [ebp+8]
-		add ebx, [ebp+12]
-		pop ebp	
+		;push ebp
+		;mov ebp, esp  
+		mov ebx, [esp+4]
+		add ebx, [esp+8]
+		;pop ebp	
 	ret
 main:
 	mov eax, msg

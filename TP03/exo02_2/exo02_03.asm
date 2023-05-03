@@ -6,6 +6,7 @@ global main
 		msg2 :db "the sum of the all values is:", 0 
 		msg3 :db "the sum of the all positive values is:", 0
 	segment .bss
+		a: resd 1
 	segment .text
 main: 
 while: 
@@ -18,6 +19,7 @@ while:
 	add ebx, 4
 	jmp while
 endwhile:
+	mov dword[a], ebx
 	mov eax, msg1
 	call print_string
 	call print_nl
